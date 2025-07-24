@@ -59,13 +59,15 @@ export default function Demo() {
          <nav className="responsive-nav">
   <span>Autosuggestion Kit Demo</span>
   <a
-    href="https://github.com/keshav-builds/autosuggestion_demo/blob/main/app/page.tsx"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="View source on GitHub"
-  >
-    <img src="/github.png" alt="GitHub Repository" style={{ width: 32, height: 32 }} />
-  </a>
+  href="https://github.com/keshav-builds/autosuggestion_demo/blob/main/app/page.tsx"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="View source on GitHub"
+  style={{ display: "flex", alignItems: "center", textDecoration: "none" }}
+>
+  <img src="/github.png" alt="GitHub Repository" style={{ width: 32, height: 32, marginRight: 8 }} />
+  <span style={{ color: "#707070" , fontSize: "0.9rem" }}>View Source</span>
+</a>
 </nav>
 
 
