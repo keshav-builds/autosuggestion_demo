@@ -1,1 +1,63 @@
+    *, *::before, *::after {
+          box-sizing: border-box;
+        }
+            /* Ensure full-page background and remove default margin */
+  html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
+  /* Gradient background for the entire page */
+  body {
+    background: linear-gradient(120deg, #f8fafc 0%, #d2dfefff 100%);
+    color: black;
+    /* // min-height: 100vh; */
+  }
+/* Navigation bar base styles */
+nav.responsive-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e293b;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+nav.responsive-nav span {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+nav.responsive-nav a {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 600px) {
+  nav.responsive-nav {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  nav.responsive-nav span {
+    font-size: 1.25rem;
+    letter-spacing: 0.3px;
+  }
+
+  nav.responsive-nav a {
+    justify-content: center;
+  }
+}
+/* Hide keyboard navigation text on small screens */
+@media (max-width: 600px) {
+  .keyboard-nav-text {
+    display: none;
+  }
+}

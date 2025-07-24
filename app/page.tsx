@@ -12,7 +12,6 @@ const fruits: SuggestionItem[] = [
   { id: 5, label: "Elderberry", metadata: { category: "Fruit" } },
   { id: 6, label: "Fig", metadata: { category: "Fruit" } },
   { id: 7, label: "Grape", metadata: { category: "Fruit" } },
-  { id: 8, label: "Honeydew", metadata: { category: "Fruit" } },
 ];
 
 const trendingSearches: SuggestionItem[] = [
@@ -48,59 +47,27 @@ export default function Demo() {
 
   return (
     <>
-      {/* Global box-sizing reset */}
-      <style>{`
-        *, *::before, *::after {
-          box-sizing: border-box;
-        }
-            /* Ensure full-page background and remove default margin */
-  html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Gradient background for the entire page */
-  body {
-    background: linear-gradient(120deg, #f8fafc 0%, #d2dfefff 100%);
-    color: black;
-    // min-height: 100vh;
-  }
-      `}</style>
-
       <div
         style={{
-          // minHeight: "100%", 
           padding: "2rem",
-          // backgroundColor: "#f8fafc",
+
           fontFamily: "system-ui, -apple-system, sans-serif",
         }}
       >
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <h1
-            style={{
-              fontSize: "2.5rem",
-              fontWeight: "bold",
-              textAlign: "center",
-              marginBottom: "1rem",
-              color: "#1e293b",
-            }}
-          >
-            AutoSuggestion Kit Demo
-          </h1>
+          {/* Navigation Bar */}
+         <nav className="responsive-nav">
+  <span>Autosuggestion Kit Demo</span>
+  <a
+    href="https://github.com/keshav-builds/autosuggestion_demo/blob/main/app/page.tsx"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="View source on GitHub"
+  >
+    <img src="/github.png" alt="GitHub Repository" style={{ width: 32, height: 32 }} />
+  </a>
+</nav>
 
-          <p
-            style={{
-              textAlign: "center",
-              color: "#64748b",
-              marginBottom: "3rem",
-              fontSize: "1.1rem",
-            }}
-          >
-            Effortlessly add a lightweight, headless autosuggestion component to your React
-            apps with seamless built-in history and trending search support—boost user experience
-            and productivity instantly
-          </p>
 
           <div style={{ marginBottom: "2rem" }}>
             <h2
@@ -112,25 +79,25 @@ export default function Demo() {
             >
               Basic Example with Static Data
             </h2>
-             <p
-              style={{
-                marginTop: "0.10rem",
-                fontSize: "1.0rem",
-                color: "#64748b",
-                fontStyle: "bold",
-                userSelect: "none",
-              }}
-            >
-              Keyboard navigation supported: Use the ↑ ↓ arrow keys to browse suggestions and Enter to
-              select
-            </p>
+         <p
+  className="keyboard-nav-text"
+  style={{
+    marginTop: "0.10rem",
+    fontSize: "1.0rem",
+    color: "#64748b",
+    fontStyle: "bold",
+    userSelect: "none",
+  }}
+>
+  Keyboard navigation supported: Use the ↑ ↓ arrow keys to browse suggestions and Enter to select
+</p>
             <AutoSuggestion
               suggestions={fruits}
               defaultSuggestions={trendingSearches}
               showDefaultOnFocus={true}
               enableHistory={true}
               historyKey="fruits-demo"
-              placeholder="Search for fruits..."
+              placeholder="  Search for fruits..."
               onSelect={(item: SuggestionItem) => {
                 setSelectedItem(item);
                 console.log("Selected:", item);
@@ -149,7 +116,7 @@ export default function Demo() {
                 style={{
                   padding: "1rem",
                   backgroundColor: "#e0f2fe",
-                 
+
                   borderRadius: "8px",
                   marginTop: "1rem",
                 }}
@@ -169,13 +136,13 @@ export default function Demo() {
               style={{
                 fontSize: "1.5rem",
                 marginBottom: "0.25rem",
-              
+
                 color: "#1e293b",
               }}
             >
               Async Example with API Simulation
             </h2>
-           
+
             <AutoSuggestion
               fetchSuggestions={fetchSuggestions}
               enableHistory={true}
@@ -190,6 +157,7 @@ export default function Demo() {
                 input: {
                   borderColor: "#e1e8e5ff",
                 },
+                searchIcon: { display: "none" },
               }}
             />
           </div>
