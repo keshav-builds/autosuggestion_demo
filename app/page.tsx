@@ -91,7 +91,7 @@ export default function Demo() {
                 rel="noopener noreferrer"
                 aria-label="View Autosuggestion Kit on npm"
                 style={{
-                  backgroundColor: "#123b84ff",
+                  backgroundColor: "#2050a4ff",
                   color: "white",
                   padding: "0.4rem 0.8rem",
                   borderRadius: "5px",
@@ -195,6 +195,7 @@ export default function Demo() {
               styles={{
                 input: {
                   borderColor: "#e1e8e5ff",
+   
                 },
                
               }}
