@@ -91,7 +91,7 @@ export default function Demo() {
                 rel="noopener noreferrer"
                 aria-label="View Autosuggestion Kit on npm"
                 style={{
-                  backgroundColor: "#3b82f6",
+                  backgroundColor: "#123b84ff",
                   color: "white",
                   padding: "0.4rem 0.8rem",
                   borderRadius: "5px",
@@ -103,7 +103,7 @@ export default function Demo() {
                   transition: "background-color 0.3s ease",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#2563eb")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#3b82f6")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#0d3882ff")}
               >
                 View on npm
               </a>
@@ -186,7 +186,7 @@ export default function Demo() {
               fetchSuggestions={fetchSuggestions}
               enableHistory={true}
               historyKey="async-demo"
-              placeholder="Search fruits (async)..."
+              placeholder="  Search fruits (async)..."
               debounceMs={300}
               minQueryLength={1}
               onSelect={(item: SuggestionItem) => {
@@ -196,7 +196,7 @@ export default function Demo() {
                 input: {
                   borderColor: "#e1e8e5ff",
                 },
-                searchIcon: { display: "none" },
+               
               }}
             />
           </div>

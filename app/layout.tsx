@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "A beautiful, modern autosuggestion input component for React with search history support and async fetch. Used in the Autosuggestion Kit library.",
   keywords:
     "react autosuggestion, autocomplete component, autosuggestion kit, react input suggestions",
-  viewport: "width=device-width, initial-scale=1",
+ 
 };
 
 export default function RootLayout({
