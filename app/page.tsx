@@ -50,26 +50,65 @@ export default function Demo() {
       <div
         style={{
           padding: "2rem",
-
           fontFamily: "system-ui, -apple-system, sans-serif",
         }}
       >
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           {/* Navigation Bar */}
-         <nav className="responsive-nav">
-  <span>Autosuggestion Kit Demo</span>
-  <a
-  href="https://github.com/keshav-builds/autosuggestion_demo/blob/main/app/page.tsx"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="View source on GitHub"
-  style={{ display: "flex", alignItems: "center", textDecoration: "none" }}
->
-  <img src="/github.png" alt="GitHub Repository" style={{ width: 32, height: 32, marginRight: 8 }} />
-  <span style={{ color: "#707070" , fontSize: "0.9rem" }}>View Source</span>
-</a>
-</nav>
+          <nav
+            className="responsive-nav"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "1.5rem",
+            }}
+          >
+            <span style={{ fontWeight: "bold", fontSize: "1.2rem" }}>
+              Autosuggestion Kit Demo
+            </span>
+            <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+              <a
+                href="https://github.com/keshav-builds/autosuggestion_demo/blob/main/app/page.tsx"
+                target="_blank"
+                rel="noopener noreferrer"
+                 title="view source "
+                aria-label="View source on GitHub"
+                style={{ display: "flex", alignItems: "center", textDecoration: "none" }}
+              >
+                <img
+                  src="/github.png"
+                  alt="GitHub Repository"
+                  style={{ width: 32, height: 32, marginRight: 8 }}
+                />
+                
+              </a>
 
+              {/* NPM Package Link Button */}
+              <a
+                href="https://www.npmjs.com/package/autosuggestion-kit"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Autosuggestion Kit on npm"
+                style={{
+                  backgroundColor: "#3b82f6",
+                  color: "white",
+                  padding: "0.4rem 0.8rem",
+                  borderRadius: "5px",
+                  fontWeight: "600",
+                  fontSize: "0.9rem",
+                  textDecoration: "none",
+                  whiteSpace: "nowrap",
+                  boxShadow: "0 2px 6px rgb(59 130 246 / 0.5)",
+                  transition: "background-color 0.3s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#2563eb")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#3b82f6")}
+              >
+                View on npm
+              </a>
+            </div>
+          </nav>
 
           <div style={{ marginBottom: "2rem" }}>
             <h2
@@ -81,25 +120,25 @@ export default function Demo() {
             >
               Basic Example with Static Data
             </h2>
-         <p
-  className="keyboard-nav-text"
-  style={{
-    marginTop: "0.10rem",
-    fontSize: "1.0rem",
-    color: "#64748b",
-    fontStyle: "bold",
-    userSelect: "none",
-  }}
->
-  Keyboard navigation supported: Use the ↑ ↓ arrow keys to browse suggestions and Enter to select
-</p>
+            <p
+              className="keyboard-nav-text"
+              style={{
+                marginTop: "0.10rem",
+                fontSize: "1.0rem",
+                color: "#64748b",
+                fontWeight: "bold",
+                userSelect: "none",
+              }}
+            >
+              Keyboard navigation supported: Use the ↑ ↓ arrow keys to browse suggestions and Enter to select
+            </p>
             <AutoSuggestion
               suggestions={fruits}
               defaultSuggestions={trendingSearches}
               showDefaultOnFocus={true}
               enableHistory={true}
               historyKey="fruits-demo"
-              placeholder="  Search for fruits..."
+              placeholder="  Search for fruits..."
               onSelect={(item: SuggestionItem) => {
                 setSelectedItem(item);
                 console.log("Selected:", item);
@@ -118,7 +157,6 @@ export default function Demo() {
                 style={{
                   padding: "1rem",
                   backgroundColor: "#e0f2fe",
-
                   borderRadius: "8px",
                   marginTop: "1rem",
                 }}
@@ -138,7 +176,6 @@ export default function Demo() {
               style={{
                 fontSize: "1.5rem",
                 marginBottom: "0.25rem",
-
                 color: "#1e293b",
               }}
             >
